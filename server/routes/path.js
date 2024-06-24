@@ -1,0 +1,11 @@
+const express=require("express");
+const router = express.Router();
+const {login,signup,sendOTP,addtask,deltask,edittask,forgotpassword} = require("../controllers/auth");
+router.post("/auth/login",login);
+router.post("/auth/signup",signup);
+router.post("/auth/sendotp",sendOTP);
+router.post("/auth/addtask",addtask);
+router.delete("/auth/deltask",deltask);
+router.put("/auth/edittask",edittask);
+router.put("/auth/forgotpassword",forgotpassword);
+module.exports=router;
