@@ -61,6 +61,7 @@ export function deltask(_id,email){
                 throw new Error(response.data.message);
             }
             dispatch(setTaskData(response.data.data));
+            localStorage.setItem("taskData",JSON.stringify(response.data.data));
             toast.success("Task Deleted Successfully.");
         }
         catch(err){
@@ -89,6 +90,7 @@ export function edittask(_id,email,msg) {
                 throw new Error(response.data.message);
             }
             dispatch(setTaskData(response.data.data));
+            localStorage.setItem("taskData",JSON.stringify(response.data.data));
             toast.success("Task Edited Successfully");
         }
         catch(err){
@@ -189,6 +191,7 @@ export function addtask(msg,email){
                 throw new Error(response.data.message);
             }
             dispatch(setTaskData(response.data.data));
+            localStorage.setItem("taskData",JSON.stringify(response.data.data));
             toast.success("Task Added Successfully");
         }
         catch(err){
@@ -225,8 +228,6 @@ export function login(email,password,navigate){
             localStorage.setItem("token",JSON.stringify(response.data.token));
             localStorage.setItem("taskData",JSON.stringify(response.data.data));
             localStorage.setItem("loginData",JSON.stringify(response.data.findUser)); //update
-            console.log("JSON stringify findUser ",JSON.stringify(response.data.findUser));//update
-            console.log("response.data.findUser ",response.data.findUser);//update
             navigate("/home");
         }
         catch(err) {
