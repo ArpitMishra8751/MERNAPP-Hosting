@@ -223,6 +223,7 @@ export function login(email,password,navigate){
             dispatch(setSignupData(response.data.findUser));
             dispatch(setTaskData(response.data.data));
             localStorage.setItem("token",JSON.stringify(response.data.token));
+            localStorage.setItem("taskData",JSON.stringify(response.data.data));
             localStorage.setItem("loginData",JSON.stringify(response.data.findUser)); //update
             console.log("JSON stringify findUser ",JSON.stringify(response.data.findUser));//update
             console.log("response.data.findUser ",response.data.findUser);//update
