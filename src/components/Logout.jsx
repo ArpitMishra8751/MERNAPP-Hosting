@@ -11,6 +11,7 @@ const Logout = () => {
         dispatch(setToken(null));
         dispatch(setTaskData(null));
         localStorage.removeItem("token");
+        localStorage.removeItem("loginData");//update
         navigate("/");
     },[])
   return (
