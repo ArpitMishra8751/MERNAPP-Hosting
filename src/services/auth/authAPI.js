@@ -224,6 +224,7 @@ export function login(email,password,navigate){
             dispatch(setTaskData(response.data.data));
             localStorage.setItem("token",JSON.stringify(response.data.token));
             localStorage.setItem("loginData",JSON.stringify(response.data.findUser)); //update
+            console.log("JSON stringify findUser ",JSON.stringify(response.data.findUser));
             navigate("/home");
         }
         catch(err) {
