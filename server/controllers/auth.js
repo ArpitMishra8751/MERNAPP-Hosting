@@ -247,9 +247,9 @@ exports.signup=async(req,res)=>{
 
 exports.sendOTP = async(req,res) =>{
     try{
-        const {email , firstName} = req.body;
-        const checkUserPresent = await User.findOne({ email });
-        if(checkUserPresent && firstName) {
+        const {email } = req.body;
+        const checkUserPresent = await Task.findOne({ email });
+        if(checkUserPresent ) {
             return res.status(401).send({
                 success:false,
                 message:"User is already registed",
