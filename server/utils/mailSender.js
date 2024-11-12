@@ -21,8 +21,7 @@ const mailSender = async(email,title,body)=>{
             subject:`${title}`,
             html:`${body}`,
         };
-        // let info = await
-        transporter.sendMail(mailOptions,function(error,info){
+        let info = await transporter.sendMail(mailOptions,function(error,info){
             if(error){
                 console.log("some err occured... ",error);
             }
@@ -30,8 +29,8 @@ const mailSender = async(email,title,body)=>{
                 console.log("email send successfully");
             }
         })
-        // console.log( "information.. " ,info);
-        // return info;
+        console.log( "information.. " ,info);
+        return info;
     }
     catch(err){
         console.log("Some error occuring while sending email ... ",err);
