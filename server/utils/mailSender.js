@@ -13,8 +13,8 @@ const mailSender = async(email,title,body)=>{
                 pass:process.env.MAIL_PASS,
             },
         });
-        // console.log("info.. ",process.env.MAIL_HOST,process.env.MAIL_USER,process.env.MAIL_PASS);
-        // console.log("info2.. ",email,title,body);
+        console.log("info.. ",process.env.MAIL_HOST,process.env.MAIL_USER,process.env.MAIL_PASS);
+        console.log("info2.. ",email,title,body);
         var mailOptions = {
             from: 'Ekart-App by Arpit',
             to:`${email}`,
@@ -24,18 +24,18 @@ const mailSender = async(email,title,body)=>{
         // let info = await
         transporter.sendMail(mailOptions,function(error,info){
             if(error){
-                // console.log("some err occured... ",error);
+                console.log("some err occured... ",error);
             }
             else{
-                // console.log("email send successfully");
+                console.log("email send successfully");
             }
         })
         // console.log( "information.. " ,info);
         // return info;
     }
     catch(err){
-        // console.log("Some error occuring while sending email ... ",err);
-        // console.log("message.. ",err.message);
+        console.log("Some error occuring while sending email ... ",err);
+        console.log("message.. ",err.message);
     }
 }
 
