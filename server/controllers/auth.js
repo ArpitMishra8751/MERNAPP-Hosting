@@ -249,12 +249,12 @@ exports.sendOTP = async(req,res) =>{
     try{
         const {email} = req.body;
         const checkUserPresent = await User.findOne({ email });
-        // if(checkUserPresent) {
-        //     return res.status(401).send({
-        //         success:false,
-        //         message:"User is already registed",
-        //     })
-        // }
+        if(checkUserPresent) {
+            return res.status(401).send({
+                success:false,
+                message:"User is already registed",
+            })
+        }
         var otp = otpGenerator.generate(6,{
             upperCaseAlphabets:false,
             lowerCaseAlphabets:false,
