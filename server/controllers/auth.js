@@ -253,7 +253,6 @@ exports.sendOTP = async(req,res) =>{
         if(checkUserPresent && (!firstName)) {
             console.log("hii");
             return res.status(401).send({
-                console.log("hello");
                 success:false,
                 message:"User is already registed",
             })
