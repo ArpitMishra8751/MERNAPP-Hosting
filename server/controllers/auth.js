@@ -250,8 +250,10 @@ exports.sendOTP = async(req,res) =>{
         const {email , firstName } = req.body;
         console.log("first name is ... ",firstName);
         const checkUserPresent = await Task.findOne({ email });
-        if(checkUserPresent && (firstName)) {
+        if(checkUserPresent && (!firstName)) {
+            console.log("hii");
             return res.status(401).send({
+                console.log("hello");
                 success:false,
                 message:"User is already registed",
             })
