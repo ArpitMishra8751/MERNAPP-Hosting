@@ -248,6 +248,7 @@ exports.signup=async(req,res)=>{
 exports.sendOTP = async(req,res) =>{
     try{
         const {email , firstName } = req.body;
+        console.log("first name is ... ",firstName);
         const checkUserPresent = await Task.findOne({ email });
         if(checkUserPresent && (firstName)) {
             return res.status(401).send({
