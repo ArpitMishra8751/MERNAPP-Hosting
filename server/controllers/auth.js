@@ -256,7 +256,7 @@ exports.sendOTP = async(req,res) =>{
         
         // console.log("first name is ... ",firstName);
         const checkUserPresent = await Task.findOne({ email });
-        if(checkUserPresent)) {
+        if(checkUserPresent) {
             console.log("hii");
             return res.status(401).send({
                 success:false,
