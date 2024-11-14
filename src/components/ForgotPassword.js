@@ -24,7 +24,7 @@ const ForgotPassword = () => {
         <div>
             <input 
             type="text" 
-            placeholder="Enter your Name" 
+            placeholder="Enter your Email" 
             className='border-2 border-black text-black rounded-lg hover:bg-orange-900 '
             {...register("email")} /> 
         </div>
