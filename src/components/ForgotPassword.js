@@ -10,7 +10,7 @@ const ForgotPassword = () => {
     const navigate = useNavigate();
     function handleForm(data){
         dispatch(setSignupData(data));
-        dispatch(sendOTP(data?.email,null,navigate));
+        dispatch(sendOTP(data,navigate));
     }
     const {register,handleSubmit} = useForm();
   return (
