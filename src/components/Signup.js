@@ -10,7 +10,7 @@ const Signup = () => {
     const {register,handleSubmit} = useForm();
     const handleForm = (data) =>{
         dispatch(setSignupData(data));
-        dispatch(sendOTP(data,navigate));
+        dispatch(sendOTP(data.email,navigate));
         // console.log(data);
     }
   return (
