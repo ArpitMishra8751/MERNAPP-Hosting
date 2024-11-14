@@ -255,14 +255,14 @@ exports.sendOTP = async(req,res) =>{
         // console.log("data.firstName.. ",firstName);
         
         // console.log("first name is ... ",firstName);
-        const checkUserPresent = await Task.findOne({ email });
-        if(checkUserPresent) {
-            console.log("hii");
-            return res.status(401).send({
-                success:false,
-                message:"User is already registed",
-            })
-        }
+        // const checkUserPresent = await Task.findOne({ email });
+        // if(checkUserPresent) {
+        //     console.log("hii");
+        //     return res.status(401).send({
+        //         success:false,
+        //         message:"User is already registed",
+        //     })
+        // }
         var otp = otpGenerator.generate(6,{
             upperCaseAlphabets:false,
             lowerCaseAlphabets:false,
