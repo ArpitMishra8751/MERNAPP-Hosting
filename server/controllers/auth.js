@@ -248,8 +248,8 @@ exports.signup=async(req,res)=>{
 exports.sendOTP = async(req,res) =>{
     try{
         const { data } = req.body;
-        const email = data.email;
-        const firstName = data.firstName;
+        const {email} = data.email;
+        const {firstName} = data.firstName;
         console.log("data... ",data);
         console.log("data.email... ",email);
         console.log("data.firstName.. ",firstName);
@@ -284,7 +284,7 @@ exports.sendOTP = async(req,res) =>{
         })
     }
     catch(err){
-        // console.log("Some error occured" , err.message);
+        console.log("Some error occured" , err.message);
         return res.status(500).send({
             success:false,
             message:"Some error occured while sending otp , Try Again",
